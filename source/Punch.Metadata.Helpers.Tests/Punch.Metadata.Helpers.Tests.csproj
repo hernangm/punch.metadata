@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEB1CDD3-2363-40E7-83C1-179FEF7F52C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Punch.Metadata.Helpers.Tests</RootNamespace>
+    <AssemblyName>Punch.Metadata.Helpers.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Eqip.Metadata, Version=2.0.27.26784, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\packages\Eqip.Metadata.2.0.27\lib\net45\Eqip.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="Eqip.Metadata.Contracts, Version=2.0.27.26784, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\packages\Eqip.Metadata.Contracts.2.0.27\lib\net45\Eqip.Metadata.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Eqip.Metadata.Ninject, Version=2.0.27.26786, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\packages\Eqip.Metadata.Ninject.2.0.27\lib\net45\Eqip.Metadata.Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\..\..\..\..\..\packages\FluentValidation-Signed.5.0.0.1\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.2.1312.1622, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\packages\Moq.4.2.1312.1622\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\..\..\..\..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc.FluentValidation">
+      <HintPath>..\..\..\..\..\..\packages\Ninject.Web.Mvc.FluentValidation.3.0.0.4\lib\net45-full\Ninject.Web.Mvc.FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="BindingWithMetadataTests.cs" />
+    <Compile Include="KnockoutBindingApplierTests.cs" />
+    <Compile Include="Models\FilmsViewModel.cs" />
+    <Compile Include="Models\FormatViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Punch.Bindings\Punch.Bindings.csproj">
+      <Project>{57add3f0-8b64-42fb-bb15-179a5f33f2c1}</Project>
+      <Name>Punch.Bindings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Punch.Context\Punch.Context.csproj">
+      <Project>{c18a786f-1435-45f7-beda-11b960470b33}</Project>
+      <Name>Punch.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Punch.Contracts\Punch.Contracts.csproj">
+      <Project>{826fcedf-0b69-4f64-b485-414df60342cd}</Project>
+      <Name>Punch.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Punch.Core\Punch.Core.csproj">
+      <Project>{6fb19603-c7dc-4184-b643-541e92ac33bf}</Project>
+      <Name>Punch.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Punch.Validation\Punch.Validation.csproj">
+      <Project>{7af5844a-ba18-4f8b-bf2d-143d3541418d}</Project>
+      <Name>Punch.Validation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Punch.Base.Tests\Punch.Base.Tests.csproj">
+      <Project>{f7722749-39c1-4a36-a9b6-f50518244184}</Project>
+      <Name>Punch.Base.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Punch.Helpers\Punch.Helpers.csproj">
+      <Project>{25c6ee67-c272-4b3c-83bd-cec6efac7ae9}</Project>
+      <Name>Punch.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
